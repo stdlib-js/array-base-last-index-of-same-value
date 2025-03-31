@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Return the index of the last element which equals a provided search element according to the [same value algorithm][@stdlib/assert/is-same-value].
+> Return the index of the last element which equals a provided search element according to the [SameValue Algorithm][@stdlib/assert/is-same-value].
 
 <!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
 
@@ -45,43 +45,37 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/array-base-last-index-of-same-value
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-lastIndexOfSameValue = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-last-index-of-same-value@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var lastIndexOfSameValue = require( 'path/to/vendor/umd/array-base-last-index-of-same-value/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-last-index-of-same-value@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.lastIndexOfSameValue;
-})();
-</script>
+var lastIndexOfSameValue = require( '@stdlib/array-base-last-index-of-same-value' );
 ```
 
 #### lastIndexOfSameValue( x, searchElement, fromIndex )
 
-Returns the index of the last element which equals a provided search element according to the [same value algorithm][@stdlib/assert/is-same-value].
+Returns the index of the last element which equals a provided search element according to the [SameValue Algorithm][@stdlib/assert/is-same-value].
 
 ```javascript
 var x = [ 1, 2, 3, 4, 5, 6 ];
@@ -128,7 +122,7 @@ var idx = lastIndexOfSameValue( x, 2, -4 );
 ## Notes
 
 -   The function scans an input array from the starting index to the beginning of the array (i.e., backward).
--   When searching for a search element, the function checks for equality using the [same value algorithm][@stdlib/assert/is-same-value]. As a consequence, `NaN` values are considered equal, and `-0` and `+0` are considered distinct.
+-   When searching for a search element, the function checks for equality using the [SameValue Algorithm][@stdlib/assert/is-same-value] as specified in ECMAScript 5. As a consequence, `NaN` values are considered equal, and `-0` and `+0` are considered distinct.
 
 </section>
 
@@ -142,13 +136,8 @@ var idx = lastIndexOfSameValue( x, 2, -4 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-last-index-of-same-value@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var lastIndexOfSameValue = require( '@stdlib/array-base-last-index-of-same-value' );
 
 var x = [ 'foo', 'bar', 'beep', 'boop', 'foo', 'bar' ];
 
@@ -166,11 +155,6 @@ idx = lastIndexOfSameValue( x, 'foo', -3 );
 
 idx = lastIndexOfSameValue( x, 'foo', -50 );
 // returns -1
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -265,7 +249,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/array-base-last-index-of-same-value/main/LICENSE
 
-[@stdlib/assert/is-same-value]: https://github.com/stdlib-js/assert-is-same-value/tree/umd
+[@stdlib/assert/is-same-value]: https://github.com/stdlib-js/assert-is-same-value
 
 </section>
 
